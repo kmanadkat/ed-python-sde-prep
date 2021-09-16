@@ -13,13 +13,14 @@ def numWays2(n):
         return ways[n]
 
     for i in range(5, n+1):
-        numWaysForI = ways[1] + ways[2] + ways[4]
+        numWaysForI = ways[1] + ways[3] + ways[4]
         ways[0] = ways[1]
         ways[1] = ways[2]
         ways[2] = ways[3]
+        ways[3] = ways[4]
         ways[4] = numWaysForI
 
-    return ways[n]
+    return ways[4]
 
 
 # Time & Space : O(n)
@@ -46,24 +47,8 @@ print(numWays(6))
 print(numWays(7))
 print(numWays(8))
 
-print("Edge Cases")
-print(numWays(0))
-print(numWays(1))
-print(numWays(2))
-print(numWays(3))
-print(numWays(4))
-print(numWays(-1))
-
 print("Efficient Soln")
-print(numWays(5))
-print(numWays(6))
-print(numWays(7))
-print(numWays(8))
-
-print("Edge Cases")
-print(numWays(0))
-print(numWays(1))
-print(numWays(2))
-print(numWays(3))
-print(numWays(4))
-print(numWays(-1))
+print(numWays2(5))
+print(numWays2(6))
+print(numWays2(7))
+print(numWays2(8))
